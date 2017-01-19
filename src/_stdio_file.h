@@ -97,16 +97,8 @@ inline int _FILE_fd(const FILE *__f) { return ::_fileno(__CONST_CAST(FILE*, __f)
 
 inline int _FILE_fd(const FILE *__f) { return __f->_handle; }
 
-#elif defined (__Lynx__)
-
 /* the prototypes are taken from LynxOS patch for STLport 4.0 */
 inline int _FILE_fd(const FILE *__f) { return __f->_fd; }
-
-#else  /* The most common access to file descriptor. */
-
-inline int _FILE_fd(const FILE *__f) { return __f->_file; }
-
-#endif
 
 _STLP_END_NAMESPACE
 
